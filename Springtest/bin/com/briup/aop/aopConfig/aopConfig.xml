@@ -10,6 +10,11 @@
            http://www.springframework.org/schema/aop
            http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
+<bean name="accountUser" class="com.briup.aop.pojo.Account">
+		<property name="id" value="2"></property>
+		<property name="name" value="tom"></property>
+		<property name="balance" value="10"></property>
+</bean>
 <bean name="log" class="com.briup.aop.aspect.MyLogger"></bean>
 <!-- advice -->
 <bean name="afterAdvice" class="com.briup.aop.after.AfterAdvice">
@@ -20,6 +25,7 @@
 </bean>
 <!-- service -->
 <bean name="service" class="com.briup.aop.srevice.AccountServiceImpl">
+	<property name="account" ref="accountUser"></property>
 	<property name="accountDao" ref="Account"></property>
 </bean>
 
