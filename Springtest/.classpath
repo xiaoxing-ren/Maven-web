@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="jars/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="jars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="jars/junit-4.7.jar" sourcepath="jars/junit-4.7.jar"/>
+	<classpathentry kind="lib" path="jars/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="jars/spring-aop-3.2.4.RELEASE.jar" sourcepath="E:/杰普视频---线程与事件处理开始/spring/spring/day1/day1/spring下载/spring-framework-3.2.4.RELEASE/libs/spring-aop-3.2.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="jars/spring-beans-3.2.4.RELEASE.jar" sourcepath="E:/杰普视频---线程与事件处理开始/spring/spring/day1/day1/spring下载/spring-framework-3.2.4.RELEASE/libs/spring-beans-3.2.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="jars/spring-context-3.2.4.RELEASE.jar" sourcepath="E:/杰普视频---线程与事件处理开始/spring/spring/day1/day1/spring下载/spring-framework-3.2.4.RELEASE/libs/spring-context-3.2.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="jars/spring-context-support-3.2.4.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="jars/spring-core-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jars/spring-expression-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jars2/aopalliance.jar" sourcepath="E:/杰普视频---线程与事件处理开始/spring/spring/spring_day3/day3/source/aopalliance-1.0-sources.jar"/>
+	<classpathentry kind="lib" path="jars2/aspectjrt.jar" sourcepath="E:/杰普视频---线程与事件处理开始/spring/spring/spring_day3/day3/jar/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="jars2/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="jars2/spring-aspects-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jars2/spring-instrument-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/c3p0-oracle-thin-extras-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/commons-pool.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/mchange-commons-java-0.2.11.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/spring-jdbc-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jars3/jdbc/spring-tx-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="jars3/mybatis/mybatis-3.3.0.jar"/>
+	<classpathentry kind="lib" path="jars3/mybatis/mybatis-spring-1.2.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

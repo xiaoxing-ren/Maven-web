@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+<bean name="log" class="com.briup.aop.aspect.MyLogger"></bean>
+<!-- advice -->
+<bean name="afterAdvice" class="com.briup.aop.after.AfterAdvice">
+	<property name="log" ref="log"></property>
+</bean>
+<!-- Dao层 -->
+<bean name="Account" class="com.briup.aop.Dao.AccountDaoImpl">
+</bean>
+<!-- service -->
+<bean name="service" class="com.briup.aop.srevice.AccountServiceImpl">
+	<property name="accountDao" ref="Account"></property>
+</bean>
+
+
+<aop:config>
+<aop:pointcut expression="execution(* com.briup.aop.srevice.*.*(..))" id="myPointcut"/>
+<aop:advisor advice-ref="afterAdvice" pointcut-ref="myPointcut"/>
+
+</aop:config>
+
+
+
+
+
+</beans>

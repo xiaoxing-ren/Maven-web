@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+<!-- 切面类 -->
+<bean name="aspect" class="com.briup.aop.aspect.MyLogger"></bean>
+<!-- advice -->
+<bean name="around" class="com.briup.aop.around.AroundAdvice">
+	<property name="log" ref="aspect"></property>
+</bean>
+
+<!-- Dao层 -->
+<bean name="Dao" class="com.briup.aop.Dao.AccountDaoImpl"></bean>
+
+<bean name="accountUser" class="com.briup.aop.pojo.Account">
+		<property name="id" value="2"></property>
+		<property name="name" value="tom"></property>
+		<property name="balance" value="10"></property>
+</bean>
+<!-- service层 -->
+<bean name="target" class="com.briup.aop.srevice.AccountServiceImpl">
+	<property name="account" ref="accountUser"></property>
+	<property name="accountDao" ref="Dao"></property>
+</bean>
+
+<!-- 工厂 -->
+<bean name="service" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<!-- 注入目标对象 -->
+	    <property name="target" ref="target"/>
+	    
+    	<!-- 注入目标对象实现的接口 -->
+    	<property name="proxyInterfaces">
+    		<list>
+    			<value>com.briup.aop.srevice.IAccountService</value>
+    		</list>
+    	</property>
+		
+		<!-- 注入advice -->
+	    <property name="interceptorNames">
+	        <list>
+	            <value>around</value>
+	        </list>
+	    </property>
+
+</bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

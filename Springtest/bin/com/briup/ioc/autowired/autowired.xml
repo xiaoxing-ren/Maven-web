@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+<bean name="Address" class="com.briup.bean.Address" abstract="true">
+	<property name="city"><value>太原</value></property>
+	<property name="street"><value>坞城路</value></property>
+	<property name="country"><value>中国</value></property>
+</bean>
+
+<!-- 继承 -->
+<bean name="add" parent="Address"></bean>
+
+
+
+<bean name="Person" class="com.briup.bean.Person" autowire="byType">
+	<property name="sNo"><value>10</value></property>
+	<property name="name"><value>小明</value> </property>
+	<property name="gender"><value>true</value> </property>
+	<property name="age"><value>18</value> </property>	
+</bean>
+</beans>

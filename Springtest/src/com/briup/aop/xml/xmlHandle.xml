@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+<!-- Dao -->
+<bean name="dao" class="com.briup.aop.Dao.AccountDaoImpl"></bean>
+<!-- service -->
+<bean name="srevice" class="com.briup.aop.srevice.AccountServiceImpl">
+	<property name="accountDao" ref="dao"></property>
+</bean>
+
+ <!-- 配置切面类 -->
+ <!-- 该切面类中定义了很多需要织入到切入点上的方法 -->
+<bean name="xmlhandle" class="com.briup.aop.xml.XmlHandle"></bean>
+
+<!-- aop配置 -->
+<aop:config>
+<aop:pointcut expression="execution(* com.briup.aop.srevice.*.*(..))" id="myPointcut"/>
+<aop:aspect id="aspect" ref="xmlhandle">
+	<aop:before method="beforeTest" pointcut-ref="myPointcut"/>
+
+
+
+
+
+
+</aop:aspect>
+
+</aop:config>
+
+
+
+</beans>
